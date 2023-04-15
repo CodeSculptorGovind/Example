@@ -1,0 +1,46 @@
+<?php
+
+
+$date1=date_create("2013-03-15");
+$date2=date_create("2013-03-19");
+$diff=date_diff($date1,$date2,false);
+echo $diff->days;
+    //y-m-d
+    //worked fine
+    $date1="2023-04-15";
+    $date2="2023-04-20 00:00:00";
+    
+    //working fine
+    $date1="15-04-2023";
+    $date2="2023-04-20 00:05:00";
+    
+    // strtotime  not  working fine with d/m/y formates
+    $date1="15/04/2023";
+    $date2="19/04/2023";
+    
+   $date2time=strtotime($date2);
+    $date1time=strtotime($date1);
+    //echo "diff=".(int)$diff=($date2time-$date1time)/(24*60*60)."\n";
+    //echo date("Y-m-d",$date2time)."\n";
+    
+   
+    
+////How to change date format d/m/Y to Y-m-d PHP
+//d/m/y give error 
+function changeFormate($str){
+    $date = DateTime::createFromFormat('m/d/Y', $str);
+    //var_dump($date);
+    echo $date->format('Y-m-d'); 
+}
+
+//changeFormate('12/16/2023');
+
+
+//by date_fromate function
+$date1=date_create("2013-03-15");
+$date2=date_create("2013-03-05");
+$diff=date_diff($date1,$date2);
+ $diff->days;
+//echo $diff->format("%r%a");
+
+?>
