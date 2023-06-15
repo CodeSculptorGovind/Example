@@ -1,5 +1,7 @@
 <?php
-
+    /**
+    Here i uses array function to filter those number where i need to print start and where i have put space
+    **/
     $number=20;
     
     for($i=1;$i<=$number;$i++){
