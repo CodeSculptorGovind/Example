@@ -7,7 +7,12 @@
     for($i=1;$i<=$number;$i++){
         $numbers[$i]=$i;
     }
+    
+    if($number%2==0){
+        $number=$number-1;
+    }
     $middle=round($number/2);
+    
     $pass=[$middle];
     for($y=1;$y<=$number;$y++){
         
@@ -25,15 +30,16 @@
             
         for($z=1;$z<=$number;$z++){
             if(in_array($z,$pass)){
-              echo '+'; 
+              echo '/'; 
             }else{
-                echo '#';
+                echo '-';
             }
             
         }
         echo "\n";
     }
+    echo $y;
     //print_r($pass);
     
-     
+    
 ?>
